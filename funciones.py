@@ -16,7 +16,7 @@ def hamming(p1, p2, retornar):
         if retornar==1:
             return d
 
-def dCodigo(c):
+def disMinCodigo(c): 
     menor= 999999
     for i in c:
         for j in c:
@@ -27,7 +27,23 @@ def dCodigo(c):
                 d= hamming(c[I], c[J],1)
                 if d < menor:
                     menor= d
-    print(f"Distancia minima del código: {d}")
+    return d
+
+def Encontrar_Parametros(c):
+    n = len(c[0])
+    M = len(c)
+    d = disMinCodigo(c)
+    print(f"Los parámetros del código son: ({n}, {M}, {d}) - Código")
+
+def decodificar(palabra, codigo):
+    menor = 9999
+    pos=0
+    for i in codigo:
+        d = hamming(palabra, i, 1)
+        if(d<menor):
+            menor=d
+            pos=i
+    return pos
 
             
 

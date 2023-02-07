@@ -1,6 +1,6 @@
 import funciones as f
 print("=! Asistente Teoría de Código !=")
-print(" 1. Distancia de Hamming entre dos palabras \n 2. Distancia mínima de un código \n 3. Encontrr paráametros de un código \n 4. Decodificar usando distancia mínima")
+print(" 1. Distancia de Hamming entre dos palabras \n 2. Distancia mínima de un código \n 3. Encontrar parámetros de un código \n 4. Decodificar usando distancia mínima")
 select = input()
 
 if select=="1":
@@ -10,9 +10,26 @@ if select=="1":
     #Recordatorio: Acomodar para que no se termine el programa cuando no son de la misma longuitud
     print(f.hamming(p1,p2,0))
 
+#Recordatorio: Validar para cuando cuando no son de la misma longuitud
+
 if select=="2":
-    print("Ingrese el código separando por coma los elementos: ")
+    print("Ingrese el código separando por coma y espacio los elementos (ejemplo: 010, 100 ): ")
     cad=input("C= { ")
     C = cad.split(", ")
-    f.dCodigo(C)
+    f.disMinCodigo(C)
+    print(f"Distancia minima del código: {f.disMinCodigo(C)}")
 
+if select=="3":
+    print("Ingrese el código separando por coma y espacio los elementos (ejemplo: 010, 100 ) : ")
+    cad=input("C= { ") 
+    print("}")
+    C = cad.split(", ")
+    f.Encontrar_Parametros(C)
+
+if select=="4":
+    pal = input("Ingrese la palabra a decodificar: ")
+    print("Ingrese el código separando por coma y espacio los elementos (ejemplo: 010, 100 ) : ")
+    cad=input("C= { ") 
+    print("}")
+    C = cad.split(", ")
+    print(f"Decodificamos {pal} en {f.decodificar(pal,C)}")
