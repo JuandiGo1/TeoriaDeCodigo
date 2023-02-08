@@ -27,7 +27,7 @@ def disMinCodigo(c):
                 d= hamming(c[I], c[J],1)
                 if d < menor:
                     menor= d
-    return d
+    return menor
 
 def Encontrar_Parametros(c):
     n = len(c[0])

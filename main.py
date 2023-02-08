@@ -15,7 +15,7 @@ if select=="1":
 if select=="2":
     print("Ingrese el código separando por coma y espacio los elementos (ejemplo: 010, 100 ): ")
     cad=input("C= { ")
-    C = cad.split(", ")
+    C = cad.split(",")
     f.disMinCodigo(C)
     print(f"Distancia minima del código: {f.disMinCodigo(C)}")
 
@@ -23,13 +23,20 @@ if select=="3":
     print("Ingrese el código separando por coma y espacio los elementos (ejemplo: 010, 100 ) : ")
     cad=input("C= { ") 
     print("}")
-    C = cad.split(", ")
+    C = cad.split(",")
     f.Encontrar_Parametros(C)
 
-if select=="4":
-    pal = input("Ingrese la palabra a decodificar: ")
-    print("Ingrese el código separando por coma y espacio los elementos (ejemplo: 010, 100 ) : ")
+if select=="4": 
+    print("Ingrese el código separando por coma los elementos: ")
     cad=input("C= { ") 
     print("}")
-    C = cad.split(", ")
-    print(f"Decodificamos {pal} en {f.decodificar(pal,C)}")
+    C = cad.split(",")
+    op=True
+    while op==True:
+        pal = input("Ingrese la palabra a decodificar: ")
+        print(f"Decodificamos {pal} en {f.decodificar(pal,C)}")
+        print("1. Continuar decodificando \n 2. Salir")
+        elec=input()
+        if elec == "2":
+            op=False
+    
